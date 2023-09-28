@@ -1,0 +1,16 @@
+{
+  "name": "presupuestocasaennode",
+  "version": "1.0.0",
+  "description": "**Autor:**",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "json-server --watch db.json"
+  },
+  "keywords": [],
+  "author": "Kevin JJ",
+  "license": "ISC",
+  "devDependencies": {
+    "json-server": "0.17.3"
+  }
+}
