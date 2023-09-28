@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>API</title>
+    <!--Esto funciona pero la idea es que se use con ver en vivo u open with live server, así funciona-->
+        <script src="main.js" type="module" defer></script>
+    
+</head>
+<body>
+    
+    <div class="crear">
+        <form>
+            <input type="number" required name="valor" placeholder="Ingrese el monto"> <br>
+            <input type="radio" name="caja" value="ingreso" checked="true"> <label>Ingreso</label>
+            <input type="radio" name="caja" value="egreso"> <label>Egreso</label> <br>
+            <input type="submit" value="calcular">
+        </form>
+    
+        <table border="solid">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Valor</th>
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+            <tbody id="myData">
+    
+            </tbody>
+        </table> <br>
+    </div>
+    
+    <div class="total">
+        <!--Tabla para ver el saldo a favor y el saldo en contra y ACTUALIZAR-->
+    <form id="actualizar">
+        <input type="submit" value="Actualizar valores">
+    </form>
+    <table border="solid">
+        <thead>
+            <tr>
+                <th>Ingresos</th>
+                <th>Egresos</th>
+                <th>Saldo Total</th>
+            </tr>
+        </thead>
+        <tbody id="saldoTotal">
+
+        </tbody>
+    </table>
+    <br>
+    <!--Tabla para ver el saldo a favor y el saldo en contra y ACTUALIZAR-->
+    </div>
+    
+    <div class="buscar">
+        <!--Tabla para buscar-->
+        <!--En la parte del form el id, se trabaja en el js, -->
+        <form id="searchForm">
+            <input type="number" required name="ID" placeholder="Ingrese la id para buscar"> <br>
+            <input type="submit" value="Buscar ID">
+        </form>
+
+        <table border="solid">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Valor</th>
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+            <tbody id="search">
+
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="editar">
+        <!--Tabla para cambiar el valor de una ID especifica-->
+        <br>
+        <form id="edit">
+            <input type="number" required name="EditarID" placeholder="Ingrese la id que editará"> <br>
+            <input type="number" required name="EditarValor" placeholder="Ingrese el valor que editará"> <br>
+            <input type="submit" value="Editar">
+        </form>
+
+        <!--Tabla para cambiar el valor de una ID especifica-->
+    </div>
+
+    <div class="eliminar">
+        <!--Tabla para ELIMINAR una ID especifica-->
+        <br>
+        <form id="delete">
+            <input type="number" required name="deleteID" placeholder="Ingrese id que eliminará"> <br>
+            <input type="submit" value="Eliminar">
+        </form>
+        <!--Tabla para ELIMINAR una ID especifica-->
+    </div>
+
+    
+<!-- Acá le cambié para mejorar el script
+<script src="main.js"></script>
+-->
+</body>
+</html>
