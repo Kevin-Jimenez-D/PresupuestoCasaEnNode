@@ -215,19 +215,31 @@ const form = document.querySelector("form");
 const valorInput = document.querySelector("input[name='valor']");
 const cajaInput = document.querySelector("input[name='caja']");
 
-// Agregar un evento "submit" al formulario
-form.addEventListener("submit", (e) => {
-  e.preventDefault(); // Prevenir el envío del formulario
+// Agregar un evento "submit" al formulario, no olvidar el async
+form.addEventListener("submit", async(e) => {
+    e.preventDefault(); // Prevenir el envío del formulario
 
-  // Obtener el valor del input de valor
-  const valor = parseFloat(valorInput.value);
+    // Obtener el valor del input de valor
+    const valor = parseFloat(valorInput.value);
 
-  // Obtener el valor de la opción seleccionada en el input de caja
-  const caja = cajaInput.checked ? cajaInput.value : "egreso";
+    // Obtener el valor de la opción seleccionada en el input de caja
+    const caja = cajaInput.checked ? cajaInput.value : "egreso";
 
-  // Mostrar los valores en la consola
-  console.log(`Valor: ${valor}`);
-  console.log(`Caja: ${caja}`);
+    // Mostrar los valores en la consola
+    console.log(`Valor: ${valor}`);
+    console.log(`Caja: ${caja}`);
+
+    let config=
+        {
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({
+                caja:caja,
+                valor: valor
+            })
+        }
+        let res = await (await fetch(`http://localhost:3000/libros`,config)).json();
+        //console.log(res);
 });
 
 
