@@ -189,7 +189,7 @@ enviarJsonServer.addEventListener("submit", async(e)=>{
 })
 
 
-
+/*
 let myfrom=document.querySelector("form");       //Va a apuntar a todos los forms
 //Agregar los valores de la tabla en el html y en el JSON Server
 //stringify para pasarlo por una web en forma de cadena
@@ -208,6 +208,27 @@ myfrom.addEventListener("submit", async(e)=>{
     let res = await (await fetch(`http://localhost:3000/libros`,config)).json();
     //console.log(res);
 })
+*/
+
+// Obtener el formulario y el botón de calcular por su ID
+const form = document.querySelector("form");
+const valorInput = document.querySelector("input[name='valor']");
+const cajaInput = document.querySelector("input[name='caja']");
+
+// Agregar un evento "submit" al formulario
+form.addEventListener("submit", (e) => {
+  e.preventDefault(); // Prevenir el envío del formulario
+
+  // Obtener el valor del input de valor
+  const valor = parseFloat(valorInput.value);
+
+  // Obtener el valor de la opción seleccionada en el input de caja
+  const caja = cajaInput.checked ? cajaInput.value : "egreso";
+
+  // Mostrar los valores en la consola
+  console.log(`Valor: ${valor}`);
+  console.log(`Caja: ${caja}`);
+});
 
 
 
