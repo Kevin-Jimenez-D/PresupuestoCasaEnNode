@@ -71,7 +71,7 @@ let datosValor=[];  //Esto es para guardar los valores de dinero
 let datosCaja=[];   //Esto es para guardar si es ingreso o egreso
 
 addEventListener("DOMContentLoaded", async()=>{
-    let res = await (await fetch("https://6509e7e7f6553137159c3ae5.mockapi.io/presupuestoCasa")).json();
+    let res = await (await fetch(`http://localhost:3000/libros`)).json();
     //console.log(res);            //Aca guarda en un array lo que trae del HTML, como en forma de diccionario
     //extrae cada uno de los elementos con el for y los va agregando al HTML
     //console.log(res);
@@ -189,7 +189,7 @@ enviarJsonServer.addEventListener("submit", async(e)=>{
 })
 
 
-/*
+
 let myfrom=document.querySelector("form");       //Va a apuntar a todos los forms
 //Agregar los valores de la tabla en el html y en el JSON Server
 //stringify para pasarlo por una web en forma de cadena
@@ -208,7 +208,7 @@ myfrom.addEventListener("submit", async(e)=>{
     let res = await (await fetch(`http://localhost:3000/libros`,config)).json();
     //console.log(res);
 })
-*/
+
 
 
 
@@ -305,3 +305,61 @@ actualizarForm.addEventListener("submit", async (e) => {
     //Saldo total
 });
 //ACTUALIZAR
+
+
+
+
+//EDITAR
+// Agregar un evento "submit" al formulario de edición
+const editForm = document.querySelector("#edit");       //Para rastrear el evento cuando se vaya a editar algo
+//EDITAR
+//EDITAR
+
+//console.log(datosID);
+//console.log(datosValor);
+//console.log(datosCaja);
+editForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const idToEdit = document.querySelector("input[name='EditarID']").value;
+    const newValue = parseFloat(document.querySelector("input[name='EditarValor']").value);
+    const foundIndex = datosID.indexOf(idToEdit);
+
+    if (foundIndex !== -1) {
+        datosValor[foundIndex] = newValue;
+
+        //En este caso, se está utilizando una plantilla de cadena (template literal) para crear una cadena de consulta dinámica. ${foundIndex + 1} se utiliza para seleccionar la fila específica que corresponde al elemento que se está editando
+        //selector CSS que busca una fila (<tr>) en la tabla. ${foundIndex + 1} se utiliza para calcular dinámicamente el número de fila que se debe seleccionar. 
+        //como las filas de la tabla comienzan en 1 (en lugar de 0), se le suma 1 para ajustar el índice.
+        const rowToUpdate = myTabla.querySelector(`tr:nth-child(${foundIndex + 1})`);
+
+
+        //se utiliza para seleccionar la segunda celda (<td>) dentro de la fila. En una tabla HTML, las celdas se numeran desde 1, por lo que nth-child(2) selecciona la segunda celda.
+        //nth-child(2) selecciona la segunda celda.
+        //.textContent se utiliza para modificar el contenido de texto dentro de la celda seleccionada.
+        rowToUpdate.querySelector("td:nth-child(2)").textContent = parseFloat(newValue);
+        //console.log(newValue);
+
+        document.querySelector("input[name='EditarID']").value = "";
+        document.querySelector("input[name='EditarValor']").value = "";
+
+        // Actualizar los datos en el servidor
+        const updateData = {
+            valor: newValue,
+            caja:datosCaja[foundIndex]
+        };
+        //Metodo PUT para editar en mockapi
+        let config = {
+            method: "PUT",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(updateData)
+        };
+        
+        //Se trabaja dinamicamente desde la URL para saber la ID a editar y agregarlo en la URL
+        const apiUrl = `http://localhost:3000/libros/${idToEdit}`;
+        await fetch(apiUrl, config);
+
+    } else {
+        alert("ID no encontrada");
+    }
+});
+//EDITAR

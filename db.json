@@ -96,8 +96,8 @@
       "id": "19"
     },
     {
+      "valor": 600,
       "caja": "egreso",
-      "valor": 0,
       "id": "20"
     },
     {
@@ -111,13 +111,13 @@
       "id": "22"
     },
     {
-      "caja": "egreso",
-      "valor": 400,
+      "valor": 100,
+      "caja": "ingreso",
       "id": "23"
     },
     {
-      "caja": "egreso",
       "valor": 100,
+      "caja": "ingreso",
       "id": "24"
     }
   ],
