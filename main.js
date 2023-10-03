@@ -84,7 +84,7 @@ addEventListener("DOMContentLoaded", async()=>{
         </tr>
         `);
 
-        datosID.push(res[i].id)    //Con esto agrego todos los id en este array
+        datosID.push(String(res[i].id))    //Con esto agrego todos los id en este array
         //BUSCARV
         datosValor.push(res[i].valor);  //Los guardo en un array para luego utilizarlos, en este caso el dinero
         datosCaja.push(res[i].caja);    //LOs guardo en un array para luego utilizarlos, en este caso ingreso o egreso
@@ -215,6 +215,7 @@ const form = document.querySelector("form");
 const valorInput = document.querySelector("input[name='valor']");
 const cajaInput = document.querySelector("input[name='caja']");
 
+//console.log(datosID);
 // Agregar un evento "submit" al formulario, no olvidar el async
 form.addEventListener("submit", async(e) => {
     e.preventDefault(); // Prevenir el envío del formulario
