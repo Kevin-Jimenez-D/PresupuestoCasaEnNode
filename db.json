@@ -123,6 +123,12 @@
       }
     ]
   ],
-  "casa": [],
+  "casa": [
+    {
+      "caja": "ingreso",
+      "valor": 200,
+      "id": "1"
+    }
+  ],
   "papeles": []
 }
