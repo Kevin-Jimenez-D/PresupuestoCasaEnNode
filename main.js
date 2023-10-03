@@ -363,3 +363,45 @@ editForm.addEventListener("submit", async (e) => {
     }
 });
 //EDITAR
+
+
+
+
+
+//ELIMINAR
+// Agregar un evento "submit" al formulario de eliminación
+const deleteForm = document.querySelector("#delete");    //Para rastrear el evento cuando se vaya a eliminar algo
+//ELIMINAR
+//ELIMINAR
+deleteForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    //En este caso, está buscando un elemento <input> que tenga un atributo name igual a "deleteID", que esta en el HTML de la tabla para eliminar
+    //Ese dato, que es el que ingresa el usuario, es el que comparara con el array
+    const idToDelete = document.querySelector("input[name='deleteID']").value;
+    const foundIndex = datosID.indexOf(idToDelete);
+
+    if (foundIndex !== -1) {
+        // Eliminar la ID y su valor correspondiente de los arrays
+        //El método splice se utiliza para modificar un array al agregar, eliminar o reemplazar elementos. Toma dos argumentos principales:
+        //1: Este segundo argumento especifica cuántos elementos deben eliminarse a partir del índice dado
+        datosID.splice(foundIndex, 1);
+        datosValor.splice(foundIndex, 1);
+        datosCaja.splice(foundIndex, 1);
+
+        // Eliminar la fila de la tabla HTML
+        //selector CSS que busca una fila (<tr>) en la tabla. ${foundIndex + 1} se utiliza para calcular dinámicamente el número de fila que se debe seleccionar. 
+        const rowToDelete = myTabla.querySelector(`tr:nth-child(${foundIndex + 1})`);
+        rowToDelete.remove();
+
+        document.querySelector("input[name='deleteID']").value = "";
+
+        // Eliminar los datos en el servidor
+        const apiUrl = `http://localhost:3000/libros/${idToDelete}`;
+        await fetch(apiUrl, { method: "DELETE" });
+    } else {
+        alert("ID no encontrada");
+    }
+});
+
+//ELIMINAR
