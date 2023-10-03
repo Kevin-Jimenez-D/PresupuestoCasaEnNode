@@ -9,13 +9,6 @@
       "caja": "egreso",
       "valor": 100,
       "id": 2
-    },
-    {
-      "valor": 0,
-      "caja": "ingreso",
-      "id": 4
     }
-  ],
-  "casa": [],
-  "papeles": []
+  ]
 }

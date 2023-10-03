@@ -70,6 +70,7 @@ let datosID=[];     //Esto es para guardar el ID de cada uno de los datos
 let datosValor=[];  //Esto es para guardar los valores de dinero
 let datosCaja=[];   //Esto es para guardar si es ingreso o egreso
 
+//Lo que carga en la página web INICIO
 addEventListener("DOMContentLoaded", async()=>{
     let res = await (await fetch(`http://localhost:3000/libros`)).json();
     //console.log(res);            //Aca guarda en un array lo que trae del HTML, como en forma de diccionario
@@ -84,7 +85,7 @@ addEventListener("DOMContentLoaded", async()=>{
         </tr>
         `);
 
-        datosID.push(String(res[i].id))    //Con esto agrego todos los id en este array
+        datosID.push(String(res[i].id))    //Con esto agrego todos los id en este array, se coloca string para que trabaje con los datos ingresados
         //BUSCARV
         datosValor.push(res[i].valor);  //Los guardo en un array para luego utilizarlos, en este caso el dinero
         datosCaja.push(res[i].caja);    //LOs guardo en un array para luego utilizarlos, en este caso ingreso o egreso
@@ -142,8 +143,12 @@ addEventListener("DOMContentLoaded", async()=>{
     //console.log(datosID)           //y acá los visualizo
 
 })
+//Lo que carga en la página web FIN
 
 
+//Esto nunca se trabajará, pero quiero guardar la lógica para futuros proyectos
+//de traer de una base de datos a otra INICIO
+/*
 let enviarJsonServer= document.querySelector("#enviarJsonServer");
 
 enviarJsonServer.addEventListener("submit", async(e)=>{
@@ -164,53 +169,14 @@ enviarJsonServer.addEventListener("submit", async(e)=>{
         
     }
     
-
-    /*
-    let config=
-        {
-            method:"POST",
-            headers:{"Content-Type":"application/json"},
-            body:JSON.stringify(mockapi)
-        }
-
-        let res = await (await fetch(`http://localhost:3000/libros`, config)).json();
-
-    let libros = await (await fetch(`http://localhost:3000/libros/1`)).json();
-    
-    let config2=
-        {
-            method:"POST",
-            headers:{"Content-Type":"application/json"},
-            body:JSON.stringify(libros[0])
-        }
-
-        let casa = await (await fetch(`http://localhost:3000/casa`, config2)).json();
-    */
-})
-
-
-/*
-let myfrom=document.querySelector("form");       //Va a apuntar a todos los forms
-//Agregar los valores de la tabla en el html y en el JSON Server
-//stringify para pasarlo por una web en forma de cadena
-//en el id del mockapi el presupuestoCasa es el nombre de la API que aparece enla aplicacion al abrirla
-myfrom.addEventListener("submit", async(e)=>{
-    e.preventDefault();
-    const data=Object.fromEntries(new FormData(e.target));
-    console.log(data);
-    const {valor} =data;
-    data.valor=(typeof valor === "string") ? Number(valor) : null;
-    let config={
-        method:"POST",
-        headers : {"content-type" : "application/json"},
-        body: JSON.stringify(data)
-    };
-    let res = await (await fetch(`http://localhost:3000/libros`,config)).json();
-    //console.log(res);
 })
 */
+//de traer de una base de datos a otra fin
+
+
 
 // Obtener el formulario y el botón de calcular por su ID
+//Crear datos INICIO
 const form = document.querySelector("form");
 const valorInput = document.querySelector("input[name='valor']");
 const cajaInput = document.querySelector("input[name='caja']");
@@ -242,7 +208,7 @@ form.addEventListener("submit", async(e) => {
         let res = await (await fetch(`http://localhost:3000/libros`,config)).json();
         //console.log(res);
 });
-
+//Crear datos FIN
 
 
 

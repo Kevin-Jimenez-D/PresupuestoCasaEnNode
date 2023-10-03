@@ -1,4 +1,4 @@
-# Presupuesto de una Casa
+# Presupuesto de una Casa usando JSON Server
 
 **Autor:**
 
@@ -48,7 +48,11 @@ Edita los campos en la parte de autor por tu nombre y asegurate que tengas el AU
 }
 ```
 
-- Coloca la siguiente instrucción para ya añadir node a tu fichero local `npm -E -D install json-server`, ahí empieza una instalación y esta isntrucción es para hacer una versión estable (NOTA: NO tocar las carpetas de node.modules ni "package-lock.son" que se crean): 
+- Coloca la siguiente instrucción para ya añadir node a tu fichero local `npm -E -D install json-server`, ahí empieza una instalación y esta instrucción es para hacer una versión estable (NOTA: NO tocar las carpetas de node.modules ni "package-lock.son" que se crean): 
+
+![image](img/instalacionJSONServer1.png)
+
+![image](img/instalacionJSONServer2.png)
 
 - Crear un archivo en el fichero llamado "db.json", con la siguiente linea de código:
 ```
@@ -79,7 +83,14 @@ como notaras en el archivo "package.json", este ha cambiado, le vamos a editar l
 ```
 Por ultimo colocar la siguiente línea de comando `npm run dev`, y debería verse lo de que aparece en db.json, en la parte de resources aparece un link que al final aparece libros, casa, papeles y lo que se edite en vivo con el "db.json" se podrá evidenciar en esos links. Para salir del en vivo con CTRL+C en la terminal
 
+![image](img/mainJS1.png)
+
+
 - Con npm corriendo, podemos usar node en otra terminal y colocar el comando `node main.js` para ver los resultados en consola desde Visual Studio Code y desde ahí poder trabajar
+
+![image](img/nuevaTerminal.png)
+
+![image](img/nuevaTerminal2.png)
 
 ## Ignorar algunos archivos antes de subir al git
 
@@ -90,40 +101,70 @@ node_modules
 package-lock.json
 ```
 
+![image](img/gitIgnore.png)
+
 - Con esto ya se puede subir todo al GitHub
 
 ## Clonar desde el repositorio
 
 - Si se desea trabajar el proyecto, se debe clonar obviamente donde se desea trabajar o fichero deseado, en la terminal de Visual Studio Code con `git clone <url>` y luego de eso invocar el siguiente comando `npm i` en el lugar donde el fichero descargo todo de GitHub. Ya con eso se puede invocar el comando `npm run dev` para trabajar desde el repositorio clonado.
 
+![image](img/gitclone1.png)
+
+![image](img/gitclone2.png)
+
 ## Descripción del Proyecto
 
-Este proyecto permite administrar un presupuesto de una casa a través de la capacidad de consumir una API mediante MockApi. Las principales funcionalidades incluyen la búsqueda, creación, edición, eliminación y actualización de registros por medio de una ID. Además, se muestra el total de los ingresos y egresos.
+Este proyecto permite administrar un presupuesto de una casa a través de JSON Server `http://localhost:3000/libros`. Las principales funcionalidades incluyen la búsqueda, creación, edición, eliminación y actualización de registros por medio de una ID. Además, se muestra el total de los ingresos y egresos.
 
 ## Tecnologías Utilizadas
 
 - HTML
 - CSS
 - JavaScript
-- MockApi
-- Métodos como PUSH, DELETE, POST
+- JSON Server
+- Métodos como PUSH, DELETE, POST, etc.
 - Eventos de escucha como addEventListener
 
 ## Instrucciones de Uso
 
-1. Abre el archivo `index.html` en tu navegador para visualizar el proyecto.
+1. En la carpeta donde se tienen todos los elementos, ir al terminal y ejecutar la linea `npm run dev`
 
-2. Para realizar acciones en el presupuesto de la casa, utiliza las siguientes funcionalidades:
+2. Abre el archivo `index.html` en tu navegador para visualizar el proyecto con open with live server.
+
+![image](img/index.PNG)
+
+3. Para realizar acciones en el presupuesto de la casa, utiliza las siguientes funcionalidades:
 
    - **Buscar ID:** Ingresa una ID en el formulario de búsqueda y haz clic en "Buscar ID" para encontrar registros existentes.
 
+   ![image](img/buscarID.png)
+
    - **Crear Registro:** Completa el formulario con un monto, selecciona el tipo (Ingreso o Egreso) y haz clic en "Calcular" para agregar un nuevo registro.
+
+    ![image](img/creadID1.png)
+
+    ![image](img/creadID2.png)
 
    - **Editar Registro:** En el formulario de edición, ingresa la ID que deseas editar y el nuevo valor (monto). Luego, haz clic en "Editar" para actualizar la ID con el nuevo valor.
 
+   ![image](img/editarID1.png)
+
+   Al hacerse el cambio se notará en la tabla de todos los datos, y también en el del monto total
+
+   ![image](img/editarID2.png)
+
    - **Eliminar Registro:** En el formulario de eliminación, ingresa la ID que deseas eliminar y haz clic en "Eliminar" para eliminar el registro correspondiente.
 
+   ![image](img/eliminarID1.png)
+
+   Al hacerse el cambio se notará en la tabla de todos los datos, y también en el del monto total
+
+   ![image](img/eliminarID2.png)
+
    - **Actualizar Valores:** Utiliza el botón "Actualizar Valores" para reflejar los cambios en la página después de realizar acciones de creación, edición o eliminación de registros.
+
+   ![image](img/actualizar.PNG)
 
 ## NOTA
 
