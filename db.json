@@ -1,134 +1,126 @@
 {
   "libros": [
-    [
-      {
-        "caja": "ingreso",
-        "valor": 200,
-        "id": "1"
-      },
-      {
-        "caja": "egreso",
-        "valor": 500,
-        "id": "2"
-      },
-      {
-        "caja": "ingreso",
-        "valor": 500,
-        "id": "3"
-      },
-      {
-        "caja": "egreso",
-        "valor": 100,
-        "id": "4"
-      },
-      {
-        "caja": "egreso",
-        "valor": 100,
-        "id": "5"
-      },
-      {
-        "caja": "egreso",
-        "valor": 200,
-        "id": "6"
-      },
-      {
-        "caja": "ingreso",
-        "valor": 200,
-        "id": "7"
-      },
-      {
-        "caja": "ingreso",
-        "valor": 15,
-        "id": "8"
-      },
-      {
-        "caja": "ingreso",
-        "valor": 2,
-        "id": "9"
-      },
-      {
-        "caja": "ingreso",
-        "valor": 5,
-        "id": "10"
-      },
-      {
-        "caja": "ingreso",
-        "valor": 3,
-        "id": "11"
-      },
-      {
-        "caja": "ingreso",
-        "valor": 5,
-        "id": "12"
-      },
-      {
-        "caja": "egreso",
-        "valor": 100,
-        "id": "13"
-      },
-      {
-        "caja": "ingreso",
-        "valor": 100,
-        "id": "14"
-      },
-      {
-        "caja": "ingreso",
-        "valor": 100,
-        "id": "15"
-      },
-      {
-        "caja": "ingreso",
-        "valor": 100,
-        "id": "16"
-      },
-      {
-        "caja": "ingreso",
-        "valor": 100,
-        "id": "17"
-      },
-      {
-        "caja": "ingreso",
-        "valor": 102,
-        "id": "18"
-      },
-      {
-        "caja": "egreso",
-        "valor": 200,
-        "id": "19"
-      },
-      {
-        "caja": "egreso",
-        "valor": 0,
-        "id": "20"
-      },
-      {
-        "caja": "ingreso",
-        "valor": 68,
-        "id": "21"
-      },
-      {
-        "caja": "ingreso",
-        "valor": 200,
-        "id": "22"
-      },
-      {
-        "caja": "egreso",
-        "valor": 400,
-        "id": "23"
-      },
-      {
-        "caja": "egreso",
-        "valor": 100,
-        "id": "24"
-      }
-    ]
-  ],
-  "casa": [
     {
       "caja": "ingreso",
       "valor": 200,
       "id": "1"
+    },
+    {
+      "caja": "egreso",
+      "valor": 500,
+      "id": "2"
+    },
+    {
+      "caja": "ingreso",
+      "valor": 500,
+      "id": "3"
+    },
+    {
+      "caja": "egreso",
+      "valor": 100,
+      "id": "4"
+    },
+    {
+      "caja": "egreso",
+      "valor": 100,
+      "id": "5"
+    },
+    {
+      "caja": "egreso",
+      "valor": 200,
+      "id": "6"
+    },
+    {
+      "caja": "ingreso",
+      "valor": 200,
+      "id": "7"
+    },
+    {
+      "caja": "ingreso",
+      "valor": 15,
+      "id": "8"
+    },
+    {
+      "caja": "ingreso",
+      "valor": 2,
+      "id": "9"
+    },
+    {
+      "caja": "ingreso",
+      "valor": 5,
+      "id": "10"
+    },
+    {
+      "caja": "ingreso",
+      "valor": 3,
+      "id": "11"
+    },
+    {
+      "caja": "ingreso",
+      "valor": 5,
+      "id": "12"
+    },
+    {
+      "caja": "egreso",
+      "valor": 100,
+      "id": "13"
+    },
+    {
+      "caja": "ingreso",
+      "valor": 100,
+      "id": "14"
+    },
+    {
+      "caja": "ingreso",
+      "valor": 100,
+      "id": "15"
+    },
+    {
+      "caja": "ingreso",
+      "valor": 100,
+      "id": "16"
+    },
+    {
+      "caja": "ingreso",
+      "valor": 100,
+      "id": "17"
+    },
+    {
+      "caja": "ingreso",
+      "valor": 102,
+      "id": "18"
+    },
+    {
+      "caja": "egreso",
+      "valor": 200,
+      "id": "19"
+    },
+    {
+      "caja": "egreso",
+      "valor": 0,
+      "id": "20"
+    },
+    {
+      "caja": "ingreso",
+      "valor": 68,
+      "id": "21"
+    },
+    {
+      "caja": "ingreso",
+      "valor": 200,
+      "id": "22"
+    },
+    {
+      "caja": "egreso",
+      "valor": 400,
+      "id": "23"
+    },
+    {
+      "caja": "egreso",
+      "valor": 100,
+      "id": "24"
     }
   ],
+  "casa": [],
   "papeles": []
 }

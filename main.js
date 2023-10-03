@@ -150,7 +150,7 @@ enviarJsonServer.addEventListener("submit", async(e)=>{
     e.preventDefault();
     let mockapi = await (await fetch("https://6509e7e7f6553137159c3ae5.mockapi.io/presupuestoCasa")).json();
     console.log(mockapi.length);
-    /*
+    
     for (let index = 0; index < mockapi.length; index++) 
     {
         let config=
@@ -163,7 +163,9 @@ enviarJsonServer.addEventListener("submit", async(e)=>{
         let res = await (await fetch(`http://localhost:3000/libros`, config)).json();
         
     }
-    */
+    
+
+    /*
     let config=
         {
             method:"POST",
@@ -183,5 +185,6 @@ enviarJsonServer.addEventListener("submit", async(e)=>{
         }
 
         let casa = await (await fetch(`http://localhost:3000/casa`, config2)).json();
+    */
 })
 
